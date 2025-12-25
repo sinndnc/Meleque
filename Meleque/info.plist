@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Meleque needs access to your library for your efective usage</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Meleque needs access to your Library for your efective usage</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Meleque needs access to your Camera for your efective usage</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Meleque needs access to your Microphone for your efective usage</string>
+</dict>
+</plist>

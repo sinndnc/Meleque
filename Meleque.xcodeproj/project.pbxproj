@@ -6,6 +6,16 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		99AF2B1F2EF6E01B00C2D3F9 /* AppDIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF2B192EF6E01B00C2D3F9 /* AppDIConfiguration.swift */; };
+		99AF2B202EF6E01B00C2D3F9 /* FirebaseDIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF2B1A2EF6E01B00C2D3F9 /* FirebaseDIConfiguration.swift */; };
+		99AF2B212EF6E01B00C2D3F9 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AF2B1C2EF6E01B00C2D3F9 /* DIContainer.swift */; };
+		99AF2C942EF9AA9900C2D3F9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 99AF2C932EF9AA9900C2D3F9 /* FirebaseAnalytics */; };
+		99AF2C962EF9AA9900C2D3F9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 99AF2C952EF9AA9900C2D3F9 /* FirebaseAuth */; };
+		99AF2C982EF9AA9900C2D3F9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 99AF2C972EF9AA9900C2D3F9 /* FirebaseFirestore */; };
+		99AF2C9A2EF9AA9900C2D3F9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 99AF2C992EF9AA9900C2D3F9 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		99AF2ADD2EF6DE6400C2D3F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +37,27 @@
 		99AF2ACF2EF6DE6300C2D3F9 /* Meleque.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meleque.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AF2ADC2EF6DE6400C2D3F9 /* MelequeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelequeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99AF2AE62EF6DE6400C2D3F9 /* MelequeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelequeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99AF2B192EF6E01B00C2D3F9 /* AppDIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIConfiguration.swift; sourceTree = "<group>"; };
+		99AF2B1A2EF6E01B00C2D3F9 /* FirebaseDIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDIConfiguration.swift; sourceTree = "<group>"; };
+		99AF2B1C2EF6E01B00C2D3F9 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		99AF2C912EF9A9A800C2D3F9 /* Exceptions for "Meleque" folder in "Meleque" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Assets.xcassets,
+			);
+			target = 99AF2ACE2EF6DE6300C2D3F9 /* Meleque */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		99AF2AD12EF6DE6300C2D3F9 /* Meleque */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				99AF2C912EF9A9A800C2D3F9 /* Exceptions for "Meleque" folder in "Meleque" target */,
+			);
 			path = Meleque;
 			sourceTree = "<group>";
 		};
@@ -52,6 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF2C942EF9AA9900C2D3F9 /* FirebaseAnalytics in Frameworks */,
+				99AF2C9A2EF9AA9900C2D3F9 /* FirebaseStorage in Frameworks */,
+				99AF2C962EF9AA9900C2D3F9 /* FirebaseAuth in Frameworks */,
+				99AF2C982EF9AA9900C2D3F9 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +109,7 @@
 				99AF2ADF2EF6DE6400C2D3F9 /* MelequeTests */,
 				99AF2AE92EF6DE6400C2D3F9 /* MelequeUITests */,
 				99AF2AD02EF6DE6300C2D3F9 /* Products */,
+				99AF2B1E2EF6E01B00C2D3F9 /* Dependency */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +121,32 @@
 				99AF2AE62EF6DE6400C2D3F9 /* MelequeUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		99AF2B1B2EF6E01B00C2D3F9 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				99AF2B192EF6E01B00C2D3F9 /* AppDIConfiguration.swift */,
+				99AF2B1A2EF6E01B00C2D3F9 /* FirebaseDIConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		99AF2B1D2EF6E01B00C2D3F9 /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				99AF2B1C2EF6E01B00C2D3F9 /* DIContainer.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
+		99AF2B1E2EF6E01B00C2D3F9 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				99AF2B1B2EF6E01B00C2D3F9 /* Configuration */,
+				99AF2B1D2EF6E01B00C2D3F9 /* Container */,
+			);
+			path = Dependency;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +169,10 @@
 			);
 			name = Meleque;
 			packageProductDependencies = (
+				99AF2C932EF9AA9900C2D3F9 /* FirebaseAnalytics */,
+				99AF2C952EF9AA9900C2D3F9 /* FirebaseAuth */,
+				99AF2C972EF9AA9900C2D3F9 /* FirebaseFirestore */,
+				99AF2C992EF9AA9900C2D3F9 /* FirebaseStorage */,
 			);
 			productName = Meleque;
 			productReference = 99AF2ACF2EF6DE6300C2D3F9 /* Meleque.app */;
@@ -195,6 +256,9 @@
 			);
 			mainGroup = 99AF2AC62EF6DE6300C2D3F9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 99AF2AD02EF6DE6300C2D3F9 /* Products */;
 			projectDirPath = "";
@@ -236,6 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99AF2B1F2EF6E01B00C2D3F9 /* AppDIConfiguration.swift in Sources */,
+				99AF2B202EF6E01B00C2D3F9 /* FirebaseDIConfiguration.swift in Sources */,
+				99AF2B212EF6E01B00C2D3F9 /* DIContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,11 +467,17 @@
 				DEVELOPMENT_TEAM = A5PNFW5LM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meleque/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Meleque needs access to your Camera for your efective usage";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Meleque needs access to your microphone for efective usage ";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Meleque needs access to your library for your efective usage";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Meleque needs access to your Library for your efective usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -413,12 +486,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vision.apple.Meleque;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -432,11 +509,17 @@
 				DEVELOPMENT_TEAM = A5PNFW5LM9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Meleque/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Meleque needs access to your Camera for your efective usage";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Meleque needs access to your microphone for efective usage ";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Meleque needs access to your library for your efective usage";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Meleque needs access to your Library for your efective usage";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,12 +528,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vision.apple.Meleque;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -578,6 +665,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		99AF2C932EF9AA9900C2D3F9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		99AF2C952EF9AA9900C2D3F9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		99AF2C972EF9AA9900C2D3F9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		99AF2C992EF9AA9900C2D3F9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 99AF2C922EF9AA9900C2D3F9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 99AF2AC72EF6DE6300C2D3F9 /* Project object */;
 }

@@ -42,28 +42,8 @@ struct CalendarView: View {
                         }
                         .frame(
                             width: geoProxy.size.width,
-                            height: geoProxy.size.height * 0.2
+                            height: geoProxy.size.height * 0.9
                         )
-                        .background(.gray.opacity(0.2))
-                        ScrollView(.horizontal) {
-                            LazyHGrid(rows: [
-                                GridItem(.fixed(100)),
-                                GridItem(.fixed(100)),
-                                GridItem(.fixed(100))
-                            ], alignment: .top, spacing: 10) {
-                                ForEach(0..<100, id: \.self) { column in
-                                    Text("\(column)")
-                                        .frame(width: 100)
-                                        .frame(maxHeight: .infinity)
-                                        .background(Color.gray.opacity(0.2))
-                                        .border(Color.gray)
-                                }
-                            }.padding()
-                        }
-                        .frame(
-                            height: geoProxy.size.height * 0.7
-                        )
-                        .background(.gray.opacity(0.2))
                     }
                     .frame(
                         width: geoProxy.size.width,

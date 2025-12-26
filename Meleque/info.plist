@@ -2,13 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Meleque needs access to your library for your efective usage</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Meleque needs access to your Library for your efective usage</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Meleque needs access to your Camera for your efective usage</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Meleque needs access to your Microphone for your efective usage</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+    <key>CFBundleName</key>
+    <string>Meleque</string>
+
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+
+    <key>CFBundleShortVersionString</key>
+    <string>1.0</string>
+
+    <key>CFBundleVersion</key>
+    <string>1</string>
+
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+
+    <key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UIApplicationSupportsMultipleScenes</key>
+        <true/>
+    </dict>
+    
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>Meleque needs access to your library for your efective usage</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Meleque needs access to your Library for your efective usage</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Meleque needs access to your Camera for your efective usage</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Meleque needs access to your Microphone for your efective usage</string>
+
 </dict>
 </plist>

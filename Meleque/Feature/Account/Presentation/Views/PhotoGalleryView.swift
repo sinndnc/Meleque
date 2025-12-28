@@ -7,7 +7,7 @@
 
 
 import SwiftUI
-import Photos
+internal import Photos
 import Combine
 
 // MARK: - Ana View

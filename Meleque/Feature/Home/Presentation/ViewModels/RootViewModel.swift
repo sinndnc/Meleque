@@ -8,7 +8,7 @@ import Combine
 import Foundation
 
 final class RootViewModel: ObservableObject {
-    @Published var selectedTab: TabEnum = .camera
+    @Published var selectedTab: TabEnum = .home
     
     @Published var showingLocation = false
     

@@ -7,7 +7,7 @@
 import Combine
 import Foundation
 import AVFoundation
-import Photos
+internal import Photos
 
 class CameraViewModel: NSObject, ObservableObject {
     @Published var cameraAuthStatus: AVAuthorizationStatus = .notDetermined

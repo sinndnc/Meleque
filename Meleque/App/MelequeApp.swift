@@ -12,6 +12,8 @@ struct MelequeApp: App {
     @StateObject private var userViewModel = UserViewModel()
     @StateObject private var rootViewModel = RootViewModel()
     
+    @UIApplicationDelegateAdaptor(MelequeAppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
             AuthenticationView()

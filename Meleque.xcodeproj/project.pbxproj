@@ -47,17 +47,29 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
+				"Feature/Extensions/View+Extension.swift",
 				info.plist,
 			);
 			target = 99AF2ACE2EF6DE6300C2D3F9 /* Meleque */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		996642F02F01AB8100E4362E /* Exceptions for "Meleque" folder in "Copy Bundle Resources" phase from "Meleque" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 99AF2ACD2EF6DE6300C2D3F9 /* Resources */;
+			membershipExceptions = (
+				"Feature/Extensions/View+Extension.swift",
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		99AF2AD12EF6DE6300C2D3F9 /* Meleque */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				99AF2C912EF9A9A800C2D3F9 /* Exceptions for "Meleque" folder in "Meleque" target */,
+				996642F02F01AB8100E4362E /* Exceptions for "Meleque" folder in "Copy Bundle Resources" phase from "Meleque" target */,
 			);
 			path = Meleque;
 			sourceTree = "<group>";

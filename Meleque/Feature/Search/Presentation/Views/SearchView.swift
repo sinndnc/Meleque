@@ -10,13 +10,14 @@ internal import Photos
 struct SearchView: View {
     
     @State private var searchText : String = ""
-    @StateObject private var vm = PhotoGalleryViewModel()
+    @EnvironmentObject private var cameraViewModel : CameraViewModel
+    @EnvironmentObject private var photoGalleryViewModel : PhotoGalleryViewModel
     
     var body: some View {
         GeometryReader { geoProxy in
             NavigationStack{
-                ZStack{
-                    switch vm.authorizationStatus {
+                Group{
+                    switch photoGalleryViewModel.authorizationStatus {
                     case .notDetermined:
                         VStack(spacing: 20) {
                             Image(systemName: "photo.on.rectangle.angled")
@@ -33,7 +34,7 @@ struct SearchView: View {
                                 .multilineTextAlignment(.center)
                             
                             Button("İzin Ver") {
-                                vm.requestAuthorization()
+                                photoGalleryViewModel.requestAuthorization()
                             }
                             .buttonStyle(.borderedProminent)
                         }
@@ -64,20 +65,78 @@ struct SearchView: View {
                         .padding()
                         
                     case .authorized, .limited:
-                        if vm.photos.isEmpty {
+                        if photoGalleryViewModel.photos.isEmpty {
                             VStack(spacing: 20) {
                                 ProgressView()
                                 Text("Fotoğraflar yükleniyor...")
                                     .foregroundColor(.secondary)
                             }
                         } else {
-                            VStack {
-                                ScrollView {
-                                    ForEach(vm.photos) { item in
-                                        postComponent(
-                                            geoProxy: geoProxy,
-                                            photo: item
-                                        )
+                            ScrollView{
+                                LazyVStack(spacing: 5){
+                                    ForEach(photoGalleryViewModel.photos) { item in
+                                        NavigationLink {
+                                            PostDetailView(photo: item)
+                                        } label: {
+                                            HStack(alignment: .top, spacing: 12) {
+                                                VStack(alignment: .leading, spacing: 12) {
+                                                    // Fotoğraf
+                                                    PhotoGridItem(asset: item.asset)
+                                                        .aspectRatio(1, contentMode: .fill)
+                                                        .frame(
+                                                            maxWidth: geoProxy.size.width * 0.75,
+                                                            maxHeight: geoProxy.size.height * 0.25
+                                                        )
+                                                        .background(Color.gray.opacity(0.1))
+                                                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                                                        .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
+                                                    
+                                                    // Açıklama metni
+                                                    VStack(alignment: .leading, spacing: 4) {
+                                                        Text("Fotoğraf Detayları")
+                                                            .font(.subheadline)
+                                                            .fontWeight(.semibold)
+                                                            .foregroundStyle(.primary)
+                                                        
+                                                        Text("Buraya ne yazılacak okuyamadım ama böyle bir alan var")
+                                                            .lineLimit(2)
+                                                            .font(.caption)
+                                                            .foregroundStyle(.secondary)
+                                                            .multilineTextAlignment(.leading)
+                                                    }
+                                                    .padding(.horizontal, 8)
+                                                }
+                                                
+                                                Spacer(minLength: 0)
+                                                
+                                                VStack(spacing: 16) {
+                                                    actionButton(icon: "gear", color: .gray)
+                                                    actionButton(icon: "heart", color: .red)
+                                                    actionButton(icon: "archivebox", color: .blue)
+                                                    actionButton(icon: "trash", color: .red)
+                                                }
+                                                .padding(.trailing, 8)
+                                                .frame(
+                                                    maxHeight: geoProxy.size.height * 0.25
+                                                )
+                                            }
+                                            .padding(16)
+                                            .frame(maxWidth: .infinity)
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 16)
+                                                    .fill(Color(.systemBackground))
+                                                    .shadow(color: .black.opacity(0.08), radius: 8, x: 0, y: 4)
+                                            )
+                                            .overlay(
+                                                RoundedRectangle(cornerRadius: 16)
+                                                    .stroke(Color.gray.opacity(0.2), lineWidth: 1)
+                                            )
+                                            .padding(.horizontal, 12)
+                                            .padding(.vertical, 8)
+                                            
+                                            // Helper function
+                                            
+                                        }
                                     }
                                 }
                             }
@@ -85,78 +144,26 @@ struct SearchView: View {
                     @unknown default:
                         EmptyView()
                     }
+                  
                 }
                 .searchable(text: $searchText, prompt: "Search something" )
                 .navigationTitle("Search")
             }
         }
     }
-}
-
-private func postComponent(geoProxy : GeometryProxy,photo: Photo) -> some View {
     
-    HStack{
-        VStack{
-            ZStack{
-                GeometryReader { geo in
-                    PhotoGridItem(asset: photo.asset)
-                }
-                .cornerRadius(8.0)
-                .aspectRatio(1, contentMode: .fit)
-            }
-            .frame(
-                maxWidth: .infinity,
-                maxHeight: geoProxy.size.height * 0.25
-            )
-            .background(.gray.opacity(0.3))
-            .clipShape(RoundedRectangle(cornerRadius: 15))
-            
-            HStack{
-                Text("Buraya ne yazılacak okuyamadım ama böyle bir alan var")
-                    .font(.subheadline)
-                    .foregroundStyle(.gray)
-                    .multilineTextAlignment(.leading)
-            }
+    private func actionButton(icon: String, color: Color) -> some View {
+        Button {
+            // Action
+        } label: {
+            Image(systemName: icon)
+                .font(.system(size: 14))
+                .foregroundStyle(color)
+                .frame(width: 36, height: 36)
+                .background(color.opacity(0.1))
+                .clipShape(Circle())
         }
-        VStack{
-            Button{
-                
-            } label: {
-                Image(systemName: "gear")
-                    .foregroundStyle(.black)
-            }
-            Spacer()
-            Button{
-                
-            } label: {
-                Image(systemName: "heart")
-                    .foregroundStyle(.black)
-            }
-            Spacer()
-            Button{
-                
-            } label: {
-                Image(systemName: "archivebox")
-                    .foregroundStyle(.black)
-            }
-            Spacer()
-            Button{
-                
-            } label: {
-                Image(systemName: "trash")
-                    .foregroundStyle(.black)
-            }
-            Spacer()
-        }
-        .frame(
-            height: geoProxy.size.height * 0.3
-        )
     }
-    .padding()
-    .frame(
-        width: geoProxy.size.width,
-        height: geoProxy.size.height * 0.35
-    )
 }
 
 

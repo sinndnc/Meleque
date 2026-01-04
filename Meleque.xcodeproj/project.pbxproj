@@ -47,8 +47,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
-				"Feature/Extensions/View+Extension.swift",
 				info.plist,
+				"Shared/Extensions/View+Extension.swift",
 			);
 			target = 99AF2ACE2EF6DE6300C2D3F9 /* Meleque */;
 		};
@@ -59,7 +59,7 @@
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = 99AF2ACD2EF6DE6300C2D3F9 /* Resources */;
 			membershipExceptions = (
-				"Feature/Extensions/View+Extension.swift",
+				"Shared/Extensions/View+Extension.swift",
 			);
 		};
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */

@@ -13,7 +13,7 @@ import Combine
 // MARK: - Ana View
 struct PhotoGalleryView: View {
     
-    @StateObject private var vm = PhotoGalleryViewModel()
+    @EnvironmentObject private var vm : PhotoGalleryViewModel
     
     let columns = [
         GridItem(.flexible(), spacing: 2),
@@ -143,9 +143,6 @@ struct PhotoGalleryView: View {
                     .disabled(isEditing)
                 }
             }
-        }
-        .onAppear {
-            vm.checkAuthorization()
         }
     }
 }

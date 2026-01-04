@@ -11,6 +11,8 @@ struct MelequeApp: App {
     
     @StateObject private var userViewModel = UserViewModel()
     @StateObject private var rootViewModel = RootViewModel()
+    @StateObject private var cameraViewModel = CameraViewModel()
+    @StateObject private var photoGalleryViewModel = PhotoGalleryViewModel()
     
     @UIApplicationDelegateAdaptor(MelequeAppDelegate.self) var delegate
     
@@ -19,6 +21,11 @@ struct MelequeApp: App {
             AuthenticationView()
                 .environmentObject(rootViewModel)
                 .environmentObject(userViewModel)
+                .environmentObject(cameraViewModel)
+                .environmentObject(photoGalleryViewModel)
+                .onAppear {
+                    photoGalleryViewModel.checkAuthorization()
+                }
         }
     }
 }
